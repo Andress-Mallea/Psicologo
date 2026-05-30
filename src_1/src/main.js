@@ -2,7 +2,7 @@ import { CalendarUI } from './ui/CalendarUI.js';
 import { AppointmentService } from './services/AppointmentService.js';
 import { ModalUI } from './ui/ModalUI.js';
 import { handleActionSuccess } from './utils/ActionHandlers.js';
-
+import { AppointmentMapper } from './utils/AppointmentMapper.js';
 function checkOverlap(start, end, excludeId = null) {
     const allEvents = calendarUI.calendar.getEvents();
     return allEvents.some(event => {
@@ -117,7 +117,17 @@ document.getElementById('btn-view-month').onclick = (e) => {
     calendarUI.changeView('dayGridMonth');
     updateActiveBtn(e.target);
 };
-
+async function loadAndRenderAppointments() {
+    try {
+        const { data, error } = await supabase.from('appointments').select('*');
+        if (error) throw error;
+        const events = data.map(AppointmentMapper.toCalendarEvent);
+        calendarUI.calendar.removeAllEvents();
+        calendarUI.calendar.addEventSource(events);
+    } catch (err) {
+        console.error("Error cargando citas", err);
+    }
+}
 function updateActiveBtn(target) {
     document.querySelectorAll('.btn-view').forEach(b => b.classList.remove('active'));
     target.classList.add('active');
