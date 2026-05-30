@@ -1,4 +1,4 @@
-import { DateUtils } from '../src/utils/DateUtils';
+import { DateUtils } from '../src_1/src/utils/DateUtils';
 
 test('parseToISO debe convertir fecha en español a formato ISO correctamente', () => {
     const iso = DateUtils.parseToISO('15', 'Marzo', '02:30 PM', 2026);

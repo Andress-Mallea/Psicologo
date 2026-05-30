@@ -1,6 +1,7 @@
 import { CalendarUI } from './ui/CalendarUI.js';
 import { AppointmentService } from './services/AppointmentService.js';
 import { ModalUI } from './ui/ModalUI.js';
+import { handleActionSuccess } from './utils/ActionHandlers.js';
 
 function checkOverlap(start, end, excludeId = null) {
     const allEvents = calendarUI.calendar.getEvents();
@@ -129,17 +130,5 @@ async function startApp() {
     } catch (error) {
         console.error("No se pudo iniciar la agenda", error);
     }
-}
-export function handleActionSuccess(message, eventData, actionType, calendarUI, modalUI) {
-    if (actionType === 'create') calendarUI.addEventToUI(eventData);
-    if (actionType === 'update') {
-        const event = calendarUI.calendar.getEventById(eventData.id);
-        if (event) {
-            event.setProp('title', eventData.title);
-            event.setDates(eventData.start, eventData.end);
-        }
-    }
-    modalUI.close();
-    modalUI.showToast(message);
 }
 startApp();

@@ -1,4 +1,4 @@
-import { ScheduleValidator } from '../src/utils/ScheduleValidator';
+import { ScheduleValidator } from '../src_1/src/utils/ScheduleValidator';
 
 test('hasOverlap debe retornar true si hay colisión de horarios', () => {
     const eventosExistentes = [
