@@ -16,6 +16,7 @@ export const DateUtils = {
     },
     isWorkingDay(isoString) {
         const date = new Date(isoString);
-        return date.getDay() !== 0;
+        const SUNDAY = 0; 
+        return date.getDay() !== SUNDAY;
     }
 };
