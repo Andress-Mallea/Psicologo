@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>7/10</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
@@ -37,16 +37,16 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">50% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Functions</span>
-                <span class='fraction'>2/4</span>
+                <span class='fraction'>0/4</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">70% </span>
+                <span class="strong">0% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>7/10</span>
+                <span class='fraction'>0/10</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line low'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -90,14 +90,16 @@
 <a name='L25'></a><a href='#L25'>25</a>
 <a name='L26'></a><a href='#L26'>26</a>
 <a name='L27'></a><a href='#L27'>27</a>
-<a name='L28'></a><a href='#L28'>28</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L28'></a><a href='#L28'>28</a>
+<a name='L29'></a><a href='#L29'>29</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -114,17 +116,18 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">import { TimeConstants } from '../utils/Constants.js';
+//wa
 export class Appointment {
-    constructor({ id, patient_name, patient_phone, start_time, end_time, notes }) {
-        this.id = id;
-        this.title = patient_name; 
-        this.start = start_time;
-        this.end = end_time;
-        this.extendedProps = {
+<span class="fstat-no" title="function not covered" >    co</span>nstructor({ id, patient_name, patient_phone, start_time, end_time, notes }) {
+<span class="cstat-no" title="statement not covered" >        this.id = id;</span>
+<span class="cstat-no" title="statement not covered" >        this.title = patient_name; </span>
+<span class="cstat-no" title="statement not covered" >        this.start = start_time;</span>
+<span class="cstat-no" title="statement not covered" >        this.end = end_time;</span>
+<span class="cstat-no" title="statement not covered" >        this.extendedProps = {</span>
             phone: patient_phone,
             notes: notes
         };
@@ -140,9 +143,9 @@ export class Appointment {
         );
         
     }
-    isValidDuration(startISO, endISO) {
-        const diffMin = (new Date(endISO) - new Date(startISO)) / TimeConstants.MS_PER_MINUTE;
-        return diffMin &lt;= TimeConstants.MAX_APPOINTMENT_DURATION_MINUTES;
+<span class="fstat-no" title="function not covered" >    is</span>ValidDuration(startISO, endISO) {
+        const diffMin = <span class="cstat-no" title="statement not covered" >(new Date(endISO) - new Date(startISO)) / TimeConstants.MS_PER_MINUTE;</span>
+<span class="cstat-no" title="statement not covered" >        return diffMin &lt;= TimeConstants.MAX_APPOINTMENT_DURATION_MINUTES;</span>
     }
 }</pre></td></tr></table></pre>
 
@@ -151,7 +154,7 @@ export class Appointment {
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2026-06-19T06:09:36.533Z
+                at 2026-06-19T06:23:32.029Z
             </div>
         <script src="../../prettify.js"></script>
         <script>
