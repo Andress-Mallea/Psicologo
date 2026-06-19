@@ -1,4 +1,5 @@
 import { TimeConstants } from '../utils/Constants.js';
+//wa
 export class Appointment {
     constructor({ id, patient_name, patient_phone, start_time, end_time, notes }) {
         this.id = id;
