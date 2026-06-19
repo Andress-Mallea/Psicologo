@@ -4,6 +4,7 @@ import { ModalUI } from './ui/ModalUI.js';
 import { handleActionSuccess } from './utils/ActionHandlers.js';
 import { AppointmentMapper } from './utils/AppointmentMapper.js';
 import { supabase } from './api/supabaseClient.js'
+import { ToastType } from './utils/Constants.js';
 function checkOverlap(start, end, excludeId = null) {
     const allEvents = calendarUI.calendar.getEvents();
     return allEvents.some(event => {
@@ -32,19 +33,19 @@ const modalUI = new ModalUI(
                 end: saved.end_time
             });
             modalUI.close();
-            modalUI.showToast("¡Cita registrada con éxito!");
+            modalUI.showToast("¡Cita registrada con éxito!", ToastType.SUCCESS);
             }
         } catch (error) {
             console.error("Error al guardar:", error);
-            modalUI.showToast("Error al guardar la cita", "error");
+            modalUI.showToast("Error al guardar la cita", ToastType.ERROR);
         }
     },
     async (id) => {try {
             await AppointmentService.delete(id);
             const event = calendarUI.calendar.getEventById(id);
-            if (event) {
+                if (event) {
                 event.remove();
-                modalUI.showToast("Cita eliminada correctamente", "error");
+                modalUI.showToast("Cita eliminada correctamente", ToastType.ERROR);
             }
             modalUI.close();
         } catch (error) {
@@ -69,10 +70,10 @@ const modalUI = new ModalUI(
                 event.setExtendedProp('notes', formData.notes);
             }
             modalUI.close();
-            modalUI.showToast("Cita actualizada correctamente");
+            modalUI.showToast("Cita actualizada correctamente", ToastType.SUCCESS);
         } catch (error) {
             console.error(error);
-            modalUI.showToast("Error al actualizar", "error");
+            modalUI.showToast("Error al actualizar", ToastType.ERROR);
         }
     }
 );
