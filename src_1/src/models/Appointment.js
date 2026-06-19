@@ -26,4 +26,9 @@ export class Appointment {
         const diffMin = (new Date(endISO) - new Date(startISO)) / TimeConstants.MS_PER_MINUTE;
         return diffMin <= TimeConstants.MAX_APPOINTMENT_DURATION_MINUTES;
     }
+    isValidPhone() {
+        if (!this.extendedProps.phone) return false;
+        const regex = /^[67]\d{7}$/;
+        return regex.test(this.extendedProps.phone);
+    }
 }
