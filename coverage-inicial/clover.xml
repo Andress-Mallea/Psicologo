@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1781848264021" clover="3.2.0">
-  <project timestamp="1781848264021" name="All files">
-    <metrics statements="295" coveredstatements="0" conditionals="155" coveredconditionals="0" methods="62" coveredmethods="0" elements="512" coveredelements="0" complexity="0" loc="295" ncloc="295" packages="6" files="11" classes="11"/>
+<coverage generated="1781849027036" clover="3.2.0">
+  <project timestamp="1781849027036" name="All files">
+    <metrics statements="297" coveredstatements="7" conditionals="155" coveredconditionals="0" methods="63" coveredmethods="2" elements="515" coveredelements="9" complexity="0" loc="297" ncloc="297" packages="6" files="11" classes="11"/>
     <package name="src">
       <metrics statements="84" coveredstatements="0" conditionals="27" coveredconditionals="0" methods="18" coveredmethods="0"/>
       <file name="main.js" path="C:\Users\MSI LAPTOP\Desktop\Taller-de-Software\Psicologo\src_1\src\main.js">
@@ -102,17 +102,19 @@
       </file>
     </package>
     <package name="src.models">
-      <metrics statements="8" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
+      <metrics statements="10" coveredstatements="7" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="2"/>
       <file name="Appointment.js" path="C:\Users\MSI LAPTOP\Desktop\Taller-de-Software\Psicologo\src_1\src\models\Appointment.js">
-        <metrics statements="8" coveredstatements="0" conditionals="4" coveredconditionals="0" methods="3" coveredmethods="0"/>
-        <line num="3" count="0" type="stmt"/>
-        <line num="4" count="0" type="stmt"/>
-        <line num="5" count="0" type="stmt"/>
-        <line num="6" count="0" type="stmt"/>
-        <line num="7" count="0" type="stmt"/>
+        <metrics statements="10" coveredstatements="7" conditionals="4" coveredconditionals="0" methods="4" coveredmethods="2"/>
+        <line num="3" count="1" type="stmt"/>
+        <line num="4" count="1" type="stmt"/>
+        <line num="5" count="1" type="stmt"/>
+        <line num="6" count="1" type="stmt"/>
+        <line num="7" count="1" type="stmt"/>
         <line num="13" count="0" type="stmt"/>
         <line num="14" count="0" type="stmt"/>
         <line num="17" count="0" type="stmt"/>
+        <line num="24" count="1" type="stmt"/>
+        <line num="25" count="1" type="stmt"/>
       </file>
     </package>
     <package name="src.services">

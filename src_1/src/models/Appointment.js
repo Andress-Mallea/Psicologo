@@ -20,4 +20,8 @@ export class Appointment {
         );
         
     }
+    isValidDuration(startISO, endISO) {
+        const diffMin = (new Date(endISO) - new Date(startISO)) / 60000;
+        return diffMin <= 120;
+    }
 }
