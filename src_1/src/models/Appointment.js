@@ -13,7 +13,7 @@ export class Appointment {
     }
     calculateEndTime(startTime, durationMinutes) {
         const start = new Date(startTime);
-        return new Date(start.getTime() + durationMinutes * 60000).toISOString();
+        return new Date(start.getTime() + durationMinutes * TimeConstants.MS_PER_MINUTE).toISOString();
     }
     isValid() {
         return (
