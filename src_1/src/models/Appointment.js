@@ -27,8 +27,8 @@ export class Appointment {
         return diffMin <= TimeConstants.MAX_APPOINTMENT_DURATION_MINUTES;
     }
     isValidPhone() {
-        if (!this.extendedProps.phone) return false;
-        const regex = /^[67]\d{7}$/;
-        return regex.test(this.extendedProps.phone);
+        const phone = this.extendedProps.phone?.trim() || "";
+        const bolivianPhoneRegex = /^[67]\d{7}$/;
+        return bolivianPhoneRegex.test(phone);
     }
 }
