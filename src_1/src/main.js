@@ -112,7 +112,7 @@ document.getElementById('btn-view-week').onclick = (e) => {
     calendarUI.changeView('timeGridWeek');
     updateActiveBtn(e.target);
 };
-
+//wa
 document.getElementById('btn-view-month').onclick = (e) => {
     calendarUI.changeView('dayGridMonth');
     updateActiveBtn(e.target);
