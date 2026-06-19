@@ -1,3 +1,4 @@
+import { TimeConstants } from '../utils/Constants.js';
 export class Appointment {
     constructor({ id, patient_name, patient_phone, start_time, end_time, notes }) {
         this.id = id;
@@ -21,7 +22,7 @@ export class Appointment {
         
     }
     isValidDuration(startISO, endISO) {
-        const diffMin = (new Date(endISO) - new Date(startISO)) / 60000;
-        return diffMin <= 120;
+        const diffMin = (new Date(endISO) - new Date(startISO)) / TimeConstants.MS_PER_MINUTE;
+        return diffMin <= TimeConstants.MAX_APPOINTMENT_DURATION_MINUTES;
     }
 }
