@@ -13,5 +13,9 @@ export const DateUtils = {
         if (modifier === 'AM' && hours === 12) hours = 0;
         
         return new Date(currentYear, month, dayInt, hours, parseInt(minutes)).toISOString();
+    },
+    isWorkingDay(isoString) {
+        const date = new Date(isoString);
+        return date.getDay() !== 0;
     }
 };
