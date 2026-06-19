@@ -3,6 +3,7 @@ import { AppointmentService } from './services/AppointmentService.js';
 import { ModalUI } from './ui/ModalUI.js';
 import { handleActionSuccess } from './utils/ActionHandlers.js';
 import { AppointmentMapper } from './utils/AppointmentMapper.js';
+import { supabase } from './api/supabaseClient.js'
 function checkOverlap(start, end, excludeId = null) {
     const allEvents = calendarUI.calendar.getEvents();
     return allEvents.some(event => {
