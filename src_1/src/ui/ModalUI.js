@@ -1,4 +1,5 @@
 import { DateUtils } from '../utils/DateUtils.js';
+
 export class ModalUI {
     constructor(onSubmit, onDelete, onUpdate) {
         this.overlay = document.getElementById('modal-root');
@@ -112,8 +113,9 @@ export class ModalUI {
             const month = document.getElementById('display-month').value;
             const startStr = document.getElementById('start-time').value;
             const endStr = document.getElementById('end-time').value;
-            const startISO = this._parseToISO(day, month, startStr);
-            const endISO = this._parseToISO(day, month, endStr);
+            const year = new Date().getFullYear();
+            const startISO = DateUtils.parseToISO(day, month, startStr, year);
+            const endISO = DateUtils.parseToISO(day, month, endStr, year);
             const startDate = new Date(startISO);
             const endDate = new Date(endISO);
             const ahora = new Date();
@@ -148,30 +150,7 @@ export class ModalUI {
         }
     }
 
-    _parseToISO(day, monthName, timeStr) {
-        const months = {
-            'Enero': 0, 'Febrero': 1, 'Marzo': 2, 'Abril': 3, 'Mayo': 4, 'Junio': 5,
-            'Julio': 6, 'Agosto': 7, 'Septiembre': 8, 'Octubre': 9, 'Noviembre': 10, 'Diciembre': 11
-        };
-        const year = new Date().getFullYear();
-        const month = months[monthName] ?? 0;
-        const dayInt = parseInt(day, 10);
-        
-        const timeMatch = timeStr.toUpperCase().match(/(\d{1,2}):(\d{2})\s?(AM|PM)/);
-        if (!timeMatch) throw new Error("Formato de hora inválido");
-
-        let [_, hours, minutes, modifier] = timeMatch;
-        hours = parseInt(hours, 10);
-        if (modifier === 'PM' && hours < 12) hours += 12;
-        if (modifier === 'AM' && hours === 12) hours = 0;
-
-        const date = new Date(year, month, dayInt, hours, parseInt(minutes));
-        if (date.getDate() !== dayInt || date.getMonth() !== month) {
-            throw new Error("Fecha inexistente");
-        }
-
-        return date.toISOString();
-    }
+    
 
     _triggerErrorEffect(message) {
         if (this.form) {
