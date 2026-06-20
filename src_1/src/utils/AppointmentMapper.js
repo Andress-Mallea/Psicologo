@@ -1,5 +1,3 @@
-// src/utils/AppointmentMapper.js
-
 export const AppointmentMapper = {
     toCalendarEvent(appt) {
         return {

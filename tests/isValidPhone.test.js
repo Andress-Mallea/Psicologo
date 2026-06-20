@@ -1,5 +1,5 @@
 import { Appointment } from '../src_1/src/models/Appointment';
-test('isValidPhone', () => {
+test('se valida el formato de telefono usado en bolivia', () => {
     const apptBolivia = new Appointment({ patient_phone: '77654321' });
     const apptFalso = new Appointment({ patient_phone: '12345678' }); 
     const resultBolivia = apptBolivia.isValidPhone();
