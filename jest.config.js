@@ -5,5 +5,11 @@ module.exports = {
     "src_1/src/**/*.js",
     "!**/node_modules/**"
   ],
+  "coveragePathIgnorePatterns": [
+      "/node_modules/",
+      "/src/ui/",
+      "/src/main.js",
+      "/src/api/"
+    ],
   coverageDirectory: "coverage-inicial" // Carpeta donde se guardará el HTML
 };
