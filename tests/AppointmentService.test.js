@@ -1,6 +1,4 @@
 import { AppointmentService } from '../src_1/src/services/AppointmentService.js';
-
-// Simulamos la base de datos para no hacer peticiones reales
 jest.mock('../src_1/src/api/supabaseClient.js', () => ({
   supabase: {
     from: jest.fn().mockReturnThis(),
